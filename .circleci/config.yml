@@ -1,0 +1,17 @@
+# https://circleci.com/orbs/registry/orb/circleci/docker
+version: 2.1
+orbs:
+  docker: circleci/docker@0.5.18
+workflows:
+  build_and_publish_docker_image:
+    jobs:
+      - docker/publish:
+          image: dlxmedia/docker-buildkite-node
+          tag: "12"
+          dockerfile: "Dockerfile"
+          extra_build_args: '--build-arg NODE_VERSION=12.13.0'
+      - docker/publish:
+          image: dlxmedia/docker-buildkite-node
+          tag: "14"
+          dockerfile: "Dockerfile"
+          extra_build_args: '--build-arg NODE_VERSION=14'
