@@ -14,4 +14,4 @@ workflows:
           image: dlxmedia/docker-buildkite-node
           tag: "14"
           dockerfile: "Dockerfile"
-          extra_build_args: '--build-arg NODE_VERSION=14'
+          extra_build_args: '--build-arg NODE_VERSION=14.15.4'
