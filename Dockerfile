@@ -9,7 +9,7 @@ WORKDIR /workdir
 
 RUN apk add --update --no-cache $PACKAGES; \
     ln -sf python3 /usr/bin/python; \
-    python3 -m ensurepip \
+    python -m ensurepip; \
     pip3 install --no-cache --upgrade pip setuptools
 
 RUN npm i -g cross-env
