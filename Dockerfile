@@ -7,9 +7,6 @@ ENV PACKAGES=$PACKAGES
 
 WORKDIR /workdir
 
-RUN apk add --update --no-cache $PACKAGES; \
-    ln -sf python3 /usr/bin/python; \
-    python -m ensurepip; \
-    pip3 install --no-cache --upgrade pip setuptools
+RUN apk add --update --no-cache $PACKAGES
 
 RUN npm i -g cross-env
